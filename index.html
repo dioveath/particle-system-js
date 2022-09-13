@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <script type="text/javascript" src="main2.js"></script>
     <script type="text/javascript" src="particle.js"></script>
     <script type="text/javascript" src="ParticleSystem.js"></script>
     <script type="text/javascript" src="utils.js"></script>
-    <title> Simple Particle System</title>
+    <title>Simple Particle System</title>
     <style media="screen">
-      html, body {
+      html,
+      body {
         margin: 0px;
       }
       canvas {
@@ -31,8 +32,8 @@
         height: 10px;
         outline: none;
         opacity: 0.7;
-        -webkit-transition: .2s;
-        transition: opacity .2s;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
       }
       .slider::-webkit-slider-thumb {
         -webkit-appearance: none;
@@ -40,11 +41,31 @@
         width: 20px;
         height: 20px;
         border-radius: 10px;
-        background: #00F1AF;
+        background: #00f1af;
         cursor: pointer;
       }
       .slider:hover {
         opacity: 1;
+      }
+      .color-palatee {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        color: white;
+
+        display: flex;
+      }
+      .color-palatee > div {
+        margin-left: 1rem;
+        width: 50px;
+        height: 40px;
+        cursor: pointer;
+      }
+      .description {
+        position: absolute;
+        top: 1.8rem;
+        left: 30rem;
+        color: white;
       }
     </style>
   </head>
@@ -71,6 +92,17 @@
 
 
     </div> -->
+
     <canvas id="canvas" width="300" height="300" onclick=""></canvas>
+
+    <div class="color-palatee">
+      <div class="color" style="background-color: #b9fff8"></div>
+      <div class="color" style="background-color: #f806cc"></div>
+      <div class="color" style="background-color: #ff4a4a"></div>
+      <div class="color" style="background-color: #4700d8"></div>
+    </div>
+    <div class="description">
+      Mover your cursor to the particles for vortex effect on particle.
+    </div>
   </body>
 </html>

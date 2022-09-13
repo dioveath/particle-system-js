@@ -12,7 +12,7 @@ var particle = {
   gravity: 0,
   internalTime: 0,
 
-  create: function(x, y, speed, direction, gravity, friction){ //gravity is/should be G * mass of planet/radius of planet (squared)
+  create: function (x, y, speed, direction, gravity, friction) { //gravity is/should be G * mass of planet/radius of planet (squared)
     var obj = Object.create(this);
     obj.x = x;
     obj.y = y;
@@ -26,32 +26,32 @@ var particle = {
     return obj;
   },
 
-  getSpeed: function(){
+  getSpeed: function () {
     return Math.sqrt(this.vx * this.vx + this.vy * this.vy);
   },
 
-  setSpeed: function(speed){
+  setSpeed: function (speed) {
     var heading = this.getHeading();
     this.vx = Math.cos(heading) * speed;
     this.vy = Math.sin(heading) * speed;
   },
 
-  getHeading: function(){
+  getHeading: function () {
     return Math.atan2(this.vy, this.vx);
   },
 
-  setHeading: function(heading){
+  setHeading: function (heading) {
     var speed = this.getSpeed();
     this.vx = Math.cos(heading) * speed;
     this.vy = Math.sin(heading) * speed;
   },
 
-  setSpeedDirection: function(speed, direction){
+  setSpeedDirection: function (speed, direction) {
     this.vx = Math.cos(direction) * speed;
     this.vy = Math.sin(direction) * speed;
   },
 
-  applyForce: function(ax, ay){
+  applyForce: function (ax, ay) {
     //as force is accumalated we will add these forces and
     //we will reset it in last update method
     ax /= this.mass;
@@ -60,7 +60,7 @@ var particle = {
     this.ay += ay;
   },
 
-  update: function(deltaTime){
+  update: function (deltaTime) {
     // this.handleSprings();
     // this.handleGravity();
     this.ay += this.gravity * this.mass;
